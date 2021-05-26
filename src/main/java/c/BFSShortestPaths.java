@@ -7,7 +7,7 @@ import java.util.*;
 /**
  * @author : Xianqi LIU
  * @version : 1.0.0
- * @date : 2021/5/20
+ * @date : 2021/5/26
  */
 public class BFSShortestPaths
 {
@@ -59,7 +59,7 @@ public class BFSShortestPaths
     // print the shortest path from s to v
     public List<Integer> printSP(int v){
         if(!hasPathTo(v)){
-            System.out.println("There's no path from "+s+" to "+v);
+            //System.out.println("There's no path from "+s+" to "+v);
             return null;
         }
         Stack<Integer> path = new Stack<Integer>();
@@ -69,7 +69,7 @@ public class BFSShortestPaths
         }
         path.push(x);
         Collections.reverse(path);
-        System.out.println(path);
+        //System.out.println(path);
         return path;
     }
 

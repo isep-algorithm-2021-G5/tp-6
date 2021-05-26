@@ -12,7 +12,6 @@ public class GraphAdjList{
 	private int N; // N vertex
     private int M; // M edge
     private List<List<Integer>> adj;
-	private List<Node> nodeList = new ArrayList<>();
 
     public GraphAdjList(int N) {
 		this.N = N;
