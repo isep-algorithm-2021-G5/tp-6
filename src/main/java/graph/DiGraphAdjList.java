@@ -6,8 +6,15 @@ import java.io.IOException;
 import java.util.*;
 
 public class DiGraphAdjList {
-    private int N; // N vertex
-    private int M; // M edge
+
+    /**
+     * N vertex
+     */
+    private int N;
+    /**
+     * M edge
+     */
+    private int M;
     private List<List<Integer>> adj;
 
     public DiGraphAdjList(int N) {

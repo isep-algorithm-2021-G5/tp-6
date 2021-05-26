@@ -1,7 +1,6 @@
 package a;
 
 import graph.Graph;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -15,9 +14,15 @@ import java.util.Scanner;
  * @date : 2021/5/26
  */
 
+<<<<<<< Updated upstream:src/main/java/a/DepthFirstSearch.java
 public class DepthFirstSearch {
+=======
+public class DepthSearchFirst
+{
+>>>>>>> Stashed changes:src/main/java/a/DepthSearchFirst.java
 
-    public static List<Node> dfs(Graph graph, int startingNode) {
+    public List<Node> dfs(Graph graph, int startingNode)
+    {
 
         List<Node> output = new ArrayList<>();
         List<Node> tmpStack = new ArrayList<>();
@@ -26,20 +31,26 @@ public class DepthFirstSearch {
         tmpStack.add(graph.getNode(startingNode));
         graph.getNode(startingNode).setIsVisited(true);
 
-        while (tmpStack.size() != 0) {
+        while (tmpStack.size() != 0)
+        {
             int stackSize = tmpStack.size();
-            Node lastStackNode = tmpStack.get(stackSize-1);
+            Node lastStackNode = tmpStack.get(stackSize - 1);
             List<Integer> unvisitedNeighbors = new ArrayList<>();
-            for (int neighbors : lastStackNode.getNeighbors()) {
-                for (Node node : graph.getListOfNodes()) {
-                    if (node.getLabel() == neighbors && node.getIsVisited() == false) {
+            for (int neighbors : lastStackNode.getNeighbors())
+            {
+                for (Node node : graph.getListOfNodes())
+                {
+                    if (node.getLabel() == neighbors && !node.getIsVisited())
+                    {
                         unvisitedNeighbors.add(node.getLabel());
                     }
                 }
             }
-            if (unvisitedNeighbors.size() == 0) {
+            if (unvisitedNeighbors.size() == 0)
+            {
                 tmpStack.remove(lastStackNode);
-            } else {
+            } else
+            {
                 int minNode = Collections.min(unvisitedNeighbors);
                 output.add(graph.getNode(minNode));
                 tmpStack.add(graph.getNode(minNode));
@@ -50,16 +61,19 @@ public class DepthFirstSearch {
     }
 
 
-    public static int cc(List<Node> output) {
+    public int cc(List<Node> output)
+    {
         return output.size();
     }
 
 
-    public static List<String> getStrData(File file) throws FileNotFoundException {
+    public List<String> getStrData(File file) throws FileNotFoundException
+    {
         List<String> graphData = new ArrayList<>();
         Scanner myReader = new Scanner(file);
 
-        while (myReader.hasNextLine()) {
+        while (myReader.hasNextLine())
+        {
             String data = myReader.nextLine();
             graphData.add(data);
         }
@@ -67,13 +81,17 @@ public class DepthFirstSearch {
         return graphData;
     }
 
-    public static boolean isConnected(Graph graph, List<Node> output) {
+    public boolean isConnected(Graph graph, List<Node> output)
+    {
         List<Integer> outputLabel = new ArrayList<>();
-        for (Node node : output) {
+        for (Node node : output)
+        {
             outputLabel.add(node.getLabel());
         }
-        for (Node node : graph.getListOfNodes()) {
-            if (!outputLabel.contains(node.getLabel())) {
+        for (Node node : graph.getListOfNodes())
+        {
+            if (!outputLabel.contains(node.getLabel()))
+            {
                 return false;
             }
         }
