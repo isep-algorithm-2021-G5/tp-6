@@ -1,6 +1,5 @@
 package b;
 
-import graph.GraphAdjList;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -51,7 +50,7 @@ public class BreadthFirstSearch
     }
 
     // return 1 means it is connected
-    public int isConnected(GraphAdjList graph, int s) {
+    public boolean isConnected(GraphAdjList graph, int s) {
         int count = 0;
         visited = new boolean[graph.getTotalVertex()];
         for (int i=0; i<graph.getTotalVertex(); i++){
@@ -60,6 +59,10 @@ public class BreadthFirstSearch
                 count++;
             }
         }
-        return count;
+        if(count==1){
+            return true;
+        }else{
+            return false;
+        }
     }
 }

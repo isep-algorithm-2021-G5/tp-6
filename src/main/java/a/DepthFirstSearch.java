@@ -1,6 +1,5 @@
 package a;
 
-import graph.Graph;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -58,8 +57,19 @@ public class DepthFirstSearch
 
 
     //TODO: need rewrite
-    public int cc(List<Node> output) {
-        return output.size();
+    //first rewrite
+    public int cc(Graph graph, int s) {
+        int count = 0;
+        for (int i = 0; i < graph.getV(); i++) {
+            graph.getNode(i).setIsVisited(false);
+        }
+        for (int i = 0; i < graph.getV(); i++) {
+            if (!graph.getNode(i).getIsVisited()) {
+                dfs(graph,s);
+                count++;
+            }
+        }
+        return count;
     }
 
     /*
