@@ -28,10 +28,13 @@ public class TestA
         graph.getGraph(graphData);
         graph.getListOfNodes();
 
-        System.out.println("Consider starting from node 5");
+        System.out.print("Node starting from: ");
+        int startingNode = sc.nextInt();
+        //System.out.println("Consider starting from node 5");
+        //int startingNode = 5;
 
         System.out.print("DFS route: ");
-        List<Node> dfsResult = depthSearchFirst.dfs(graph, 5);
+        List<Node> dfsResult = depthSearchFirst.dfs(graph, startingNode);
         for (Node node : dfsResult)
         {
             System.out.print(node.getLabel() + " ");

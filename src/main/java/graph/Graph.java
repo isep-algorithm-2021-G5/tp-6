@@ -28,6 +28,7 @@ public class Graph
         getEdge(graphData);
     }
 
+
     public List<List<Node>> getGraph(List<String> graphData)
     {
         List<List<Node>> graph = new ArrayList<>();
