@@ -1,4 +1,4 @@
-package graph;
+package a;
 
 import a.Node;
 import java.util.ArrayList;
@@ -13,12 +13,7 @@ public class Graph
 
     public Graph(List<String> graphData)
     {
-
         this.graphData = graphData;
-    }
-
-    public List<Node> getListOfNodes() {
-        return listOfNodes;
     }
 
     public void initialize()
@@ -28,6 +23,14 @@ public class Graph
         getEdge(graphData);
     }
 
+    public List<Node> getListOfNodes() {
+        return listOfNodes;
+    }
+
+
+    public int getSizeListOfNodes() {
+        return this.listOfNodes.size();
+    }
 
     public List<List<Node>> getGraph(List<String> graphData)
     {
@@ -151,5 +154,9 @@ public class Graph
         tmp.add(jNode);
 
         return tmp;
+    }
+
+    public int getV(){
+        return listOfNodes.size();
     }
 }

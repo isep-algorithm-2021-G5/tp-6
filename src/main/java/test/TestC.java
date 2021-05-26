@@ -1,8 +1,9 @@
 package test;
 
 import c.BFSShortestPaths;
-import graph.DiGraphAdjList;
+import c.DiGraphAdjList;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -40,7 +41,7 @@ public class TestC
                     //System.out.println("Shortest distance( "+i+" to "+j+" ): "+bfsPath.distTo(j));
                 }
             }
-            //System.out.println("node "+i+" eccentricity: "+Collections.max(ec));
+            System.out.println("node "+i+" eccentricity: "+ Collections.max(ec));
         }
 
         //sc.close();

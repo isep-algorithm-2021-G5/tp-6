@@ -1,7 +1,7 @@
 package test;
 
 import b.BreadthFirstSearch;
-import graph.GraphAdjList;
+import b.GraphAdjList;
 import java.util.ArrayList;
 
 /**
@@ -27,11 +27,11 @@ public class TestB
 //        graph.prints();
 
         /*test BFS*/
-        System.out.println("Consider starting from node 5");
+        System.out.println("Test: BFS - Consider starting from node 5");
         BreadthFirstSearch bfsTest = new BreadthFirstSearch();
         ArrayList<Integer> bfsRoute = bfsTest.bfs(graph, 5);
         System.out.println("BFS route: " + bfsRoute);
-        System.out.println(bfsTest.isConnected(graph, 5));
+        System.out.println("The graph is connected: "+bfsTest.isConnected(graph,5));
 
         //sc.close();
     }
