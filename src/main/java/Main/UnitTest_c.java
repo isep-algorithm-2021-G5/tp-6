@@ -4,7 +4,7 @@ import c.BFSShortestPaths;
 import graph.DiGraphAdjList;
 import java.util.Scanner;
 
-public class Test_c {
+public class UnitTest_c {
     public static void main(String[] args) {
 
 //        Scanner sc = new Scanner(System.in);
