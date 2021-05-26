@@ -8,7 +8,7 @@ import java.util.Scanner;
 import a.Node;
 import graph.Graph;
 
-import static a.DepthSearchFirst.*;
+import static a.DepthFirstSearch.*;
 
 public class Test_a {
 
