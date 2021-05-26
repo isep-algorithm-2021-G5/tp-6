@@ -7,7 +7,7 @@ import java.util.Objects;
  * @version : 1.0.0
  * @date : 2021/5/20
  */
-public class DirectedEdge
+public class DirectedEdge implements Comparable<DirectedEdge>
 {
 
     private final int v;
@@ -64,5 +64,11 @@ public class DirectedEdge
     public int hashCode()
     {
         return Objects.hash(v, w);
+    }
+
+    @Override
+    public int compareTo(DirectedEdge o)
+    {
+        return Double.compare(this.weight(), o.weight());
     }
 }

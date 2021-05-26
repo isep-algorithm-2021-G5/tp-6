@@ -3,7 +3,7 @@ package d;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.HashSet;
+import java.util.TreeSet;
 import java.util.TreeMap;
 
 /**
@@ -15,7 +15,7 @@ public class WDgraph
 {
 
     private final int v;
-    private final TreeMap<Integer, HashSet<DirectedEdge>> adjList = new TreeMap<>();
+    private final TreeMap<Integer, TreeSet<DirectedEdge>> adjList = new TreeMap<>();
     private int e = 0;
 
     public WDgraph(String filePath)
@@ -46,12 +46,12 @@ public class WDgraph
 
     public void addEdge(int from, int to, double weight)
     {
-        HashSet<DirectedEdge> hashSet;
+        TreeSet<DirectedEdge> hashSet;
         DirectedEdge directedEdge = new DirectedEdge(from, to, weight);
 
         if (adjList.get(from) == null)
         {
-            hashSet = new HashSet<>();
+            hashSet = new TreeSet<>();
             adjList.put(from, hashSet);
         } else
         {
@@ -63,7 +63,7 @@ public class WDgraph
 
     public void print()
     {
-        HashSet<DirectedEdge> hashSet;
+        TreeSet<DirectedEdge> hashSet;
         System.out.println("v: " + v + " e: " + e);
         for (int i = 0; i < v; i++)
         {
@@ -81,9 +81,28 @@ public class WDgraph
         }
     }
 
+    public int getV()
+    {return this.v;}
+
     public int getE()
     {return this.e;}
 
-    public int getV()
-    {return this.v;}
+    public TreeSet<DirectedEdge> getAllEdges()
+    {
+        TreeSet<DirectedEdge> allEdges = new TreeSet<>();
+        for (int i = 0; i < v; i++)
+        {
+            if(adjList.get(i)!=null)
+            {
+                allEdges.addAll(adjList.get(i));
+            }
+        }
+
+        return allEdges;
+    }
+
+    public TreeSet<DirectedEdge> getEdges(int v)
+    {
+        return adjList.get(v);
+    }
 }
