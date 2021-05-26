@@ -1,11 +1,10 @@
 package d;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.function.Supplier;
-import java.util.stream.Stream;
+import java.util.HashSet;
+import java.util.TreeMap;
 
 /**
  * @author : Xuan MIAO
@@ -15,23 +14,76 @@ import java.util.stream.Stream;
 public class WDgraph
 {
 
-    private static final String FILE_PATH = "./src/graph-WDG.txt";
     private final int v;
-    private int e;
+    private final TreeMap<Integer, HashSet<DirectedEdge>> adjList = new TreeMap<>();
+    private int e = 0;
 
-    public WDgraph(Stream<String> stream)
+    public WDgraph(String filePath)
     {
+        int max = 0, from, to;
+        double weight;
 
-        stream.forEach(System.out::println);
-
+        try (BufferedReader in = new BufferedReader(new FileReader(filePath)))
+        {
+            String str;
+            while ((str = in.readLine()) != null)
+            {
+                String[] strings = str.split(" ");
+                from = Integer.parseInt(strings[0]);
+                to = Integer.parseInt(strings[1]);
+                weight = Double.parseDouble(strings[2]);
+                max = Math.max(max, Math.max(from, to));
+                addEdge(from, to, weight);
+            }
+        } catch (IOException fileNotFoundException)
+        {
+            System.out.println("File not found");
+        }
+        this.v = max + 1;
 
 
     }
 
-    public static void main(String[] args) throws IOException
+    public void addEdge(int from, int to, double weight)
     {
+        HashSet<DirectedEdge> hashSet;
+        DirectedEdge directedEdge = new DirectedEdge(from, to, weight);
 
-
-
+        if (adjList.get(from) == null)
+        {
+            hashSet = new HashSet<>();
+            adjList.put(from, hashSet);
+        } else
+        {
+            hashSet = adjList.get(from);
+        }
+        hashSet.add(directedEdge);
+        e++;
     }
+
+    public void print()
+    {
+        HashSet<DirectedEdge> hashSet;
+        System.out.println("v: " + v + " e: " + e);
+        for (int i = 0; i < v; i++)
+        {
+            System.out.print((i) + ": ");
+            hashSet = adjList.get(i);
+            if (hashSet != null)
+            {
+                for (DirectedEdge d : hashSet)
+                {
+                    System.out.print(d.toString() + " | ");
+                }
+                System.out.println();
+            }
+
+        }
+    }
+
+    public int getE()
+    {return this.e;}
+
+    public int getV()
+    {return this.v;}
 }
