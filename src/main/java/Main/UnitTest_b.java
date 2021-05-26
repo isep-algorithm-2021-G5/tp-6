@@ -6,7 +6,7 @@ import graph.GraphAdjList;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Test_b {
+public class UnitTest_b {
     public static void main(String[] args) {
 
 //        Scanner sc = new Scanner(System.in);

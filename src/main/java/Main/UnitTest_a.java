@@ -8,9 +8,9 @@ import java.util.Scanner;
 import a.Node;
 import graph.Graph;
 
-import static a.DepthSearchFirst.*;
+import static a.DepthFirstSearch.*;
 
-public class Test_a {
+public class UnitTest_a {
 
     public static void main(String[] args) throws FileNotFoundException {
 

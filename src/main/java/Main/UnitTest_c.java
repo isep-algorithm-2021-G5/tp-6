@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-public class Test_c {
+public class UnitTest_c {
     public static void main(String[] args) {
 
 //        Scanner sc = new Scanner(System.in);

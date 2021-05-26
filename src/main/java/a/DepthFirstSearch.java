@@ -15,7 +15,7 @@ import java.util.Scanner;
  * @date : 2021/5/26
  */
 
-public class DepthSearchFirst {
+public class DepthFirstSearch {
 
     public static List<Node> dfs(Graph graph, int startingNode) {
 
