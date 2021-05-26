@@ -1,4 +1,4 @@
-package graph;
+package a;
 
 import a.Node;
 import java.util.ArrayList;
@@ -151,5 +151,9 @@ public class Graph
         tmp.add(jNode);
 
         return tmp;
+    }
+
+    public int getV(){
+        return listOfNodes.size();
     }
 }
