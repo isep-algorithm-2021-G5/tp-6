@@ -1,10 +1,9 @@
-package Main;
+package test;
 
 import c.BFSShortestPaths;
 import graph.DiGraphAdjList;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * @author Xianqi LIU

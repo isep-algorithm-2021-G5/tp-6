@@ -1,4 +1,4 @@
-package Main;
+package test;
 
 import a.DepthFirstSearch;
 import a.Node;

@@ -1,4 +1,4 @@
-package Main;
+package test;
 
 import b.BreadthFirstSearch;
 import graph.GraphAdjList;
