@@ -16,7 +16,7 @@ public class WDgraph
 {
 
     private static final String FILE_PATH = "./src/graph-WDG.txt";
-    private final int v;
+    //private final int v;
     private int e;
 
     public WDgraph(Stream<String> stream)
