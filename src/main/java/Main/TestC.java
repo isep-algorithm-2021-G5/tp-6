@@ -2,8 +2,13 @@ package Main;
 
 import c.BFSShortestPaths;
 import graph.DiGraphAdjList;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
+/**
+ * @author Xianqi LIU
+ */
 public class TestC
 {
     public static void main(String[] args) {
@@ -25,12 +30,18 @@ public class TestC
         System.out.println("Test: BFS for shortest paths in unweighted (di)graph");
         BFSShortestPaths bfsPath = new BFSShortestPaths();
         for(int i=0; i<n; i++){
-            System.out.println("source:"+i);
+            //System.out.println("source:"+i);
             bfsPath.bfs(graph,i);
-            for(int j=0;j<8;j++){
-                System.out.print("path to "+j+": ");
-                bfsPath.printSP(j);
+            List<Integer> ec = new ArrayList<>();
+            for(int j=0;j<n;j++){
+                System.out.print("Shortest path( "+i+" to "+j+" ): ");
+                System.out.println(bfsPath.printSP(j));
+                if(bfsPath.hasPathTo(j)){
+                    ec.add(bfsPath.distTo(j));
+                    //System.out.println("Shortest distance( "+i+" to "+j+" ): "+bfsPath.distTo(j));
+                }
             }
+            //System.out.println("node "+i+" eccentricity: "+Collections.max(ec));
         }
 
         //sc.close();

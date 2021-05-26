@@ -1,9 +1,7 @@
 package b;
 
 import graph.GraphAdjList;
-
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -14,7 +12,10 @@ import java.util.Queue;
  */
 public class BreadthFirstSearch
 {
-    // Mark all the nodes as not visited(by default set as false)
+
+    /**
+     * Mark all the nodes as not visited(by default set as false)
+     */
     private boolean[] visited;
     public ArrayList<Integer> bfs(GraphAdjList graph, int start){
         visited = new boolean[graph.getTotalVertex()];

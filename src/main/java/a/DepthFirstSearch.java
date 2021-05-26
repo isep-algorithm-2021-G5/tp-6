@@ -14,12 +14,8 @@ import java.util.Scanner;
  * @date : 2021/5/26
  */
 
-<<<<<<< Updated upstream:src/main/java/a/DepthFirstSearch.java
-public class DepthFirstSearch {
-=======
-public class DepthSearchFirst
+public class DepthFirstSearch
 {
->>>>>>> Stashed changes:src/main/java/a/DepthSearchFirst.java
 
     public List<Node> dfs(Graph graph, int startingNode)
     {
@@ -61,6 +57,7 @@ public class DepthSearchFirst
     }
 
 
+    //TODO: need rewrite
     public int cc(List<Node> output)
     {
         return output.size();
