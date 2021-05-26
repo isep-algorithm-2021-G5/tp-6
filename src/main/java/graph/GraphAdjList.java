@@ -123,40 +123,6 @@ public class GraphAdjList{
 		System.out.println("Avg degree: "+ (double)(2*getTotalSize())/getTotalVertex());
 		return arrDegree;
     }
-
-
-	public Node getNode(int nodeLabel) {
-		Node searchedNode = new Node();
-		for (Node node : this.nodeList) {
-			if (node.getLabel() == nodeLabel) {
-				searchedNode = node;
-			}
-		}
-		return searchedNode;
-	}
-	
-	public List<Node> getNodeList(List<List<Node>> graph){
-		List<Node> nodeList = new ArrayList<>();
-		List<Integer> nodeListInt = new ArrayList<>();
-		for (List<Node> line : graph) {
-			for (int j = 0; j<2; j++) {
-				if (nodeListInt.size() == 0) {
-					nodeListInt.add(line.get(j).getLabel());
-				} else {
-					if ( !nodeListInt.contains(line.get(j).getLabel()) ) {
-						nodeListInt.add(line.get(j).getLabel());
-					}
-				}
-			}
-		}
-		for (Integer node : nodeListInt) {
-			Node newNode = new Node();
-			newNode.setLabel(node);
-			nodeList.add(newNode);
-		}
-		return nodeList;
-	}
-
 }
 
 	

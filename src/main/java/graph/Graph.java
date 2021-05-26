@@ -16,11 +16,6 @@ public class Graph {
         this.graphData = graphData;
     }
 
-    public List<List<Node>> getAdj() {
-
-        return adjacent;
-    }
-
     public List<Node> getListOfNodes() {
         return listOfNodes;
     }
