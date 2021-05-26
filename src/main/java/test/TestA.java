@@ -8,6 +8,9 @@ import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * @author Caroline YAN
+ */
 public class TestA
 {
 
