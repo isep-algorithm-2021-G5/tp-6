@@ -58,38 +58,38 @@ public class DepthFirstSearch
 
 
     //TODO: need rewrite
+    /*
     public int cc(List<Node> output) {
         return output.size();
     }
+    */
 
-    /*
     public static int cc(Graph graph, int startingNode) {
 
-        List<Node> dfsResult = dfs(graph, startingNode);
-        List<Integer> dfsResultLabel = new ArrayList<>();
+        DepthFirstSearch depthSearchFirst = new DepthFirstSearch();
+        List<Node> dfsResult = depthSearchFirst.dfs(graph, startingNode);
+        List<Integer> dfsResultNew = new ArrayList<>();
 
-        int numberOfComponents = 0;
+        int numberOfComponents = 1;
 
         if (dfsResult.size() == graph.getSizeListOfNodes()) {
             numberOfComponents = 1;
         }
         else {
             for (Node node : dfsResult) {
-                if (!dfsResultLabel.contains(node.getLabel())) {
-                    dfsResultLabel.add(node.getLabel());
+                if (!dfsResultNew.contains(node.getLabel())) {
+                    dfsResultNew.add(node.getLabel());
                 }
             }
 
-            startingNode = dfsResultLabel.get(0);
-            cc(graph, startingNode);
+            startingNode = dfsResultNew.get(0);
+            //cc(graph, startingNode);
 
-            numberOfComponents++;
+            //numberOfComponents++;
         }
+
         return numberOfComponents;
-
     }
-
-     */
 
 
     public List<String> getStrData(File file) throws FileNotFoundException

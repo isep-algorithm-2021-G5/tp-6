@@ -13,7 +13,6 @@ public class TestA
 
     public static void main(String[] args) throws FileNotFoundException
     {
-
         DepthFirstSearch depthSearchFirst = new DepthFirstSearch();
 
         System.out.println("Read graph from <graph-BFS-SP.txt>\n");
@@ -40,7 +39,7 @@ public class TestA
             System.out.print(node.getLabel() + " ");
         }
 
-        System.out.println("\n\nThe graph has: " + depthSearchFirst.cc(dfsResult) + " components");
+        System.out.println("\n\nThe graph has: " + depthSearchFirst.cc(graph, startingNode) + " component(s)");
         System.out.println(
                 "The graph is connected: " + depthSearchFirst.isConnected(graph, dfsResult));
     }

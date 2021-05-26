@@ -13,12 +13,7 @@ public class Graph
 
     public Graph(List<String> graphData)
     {
-
         this.graphData = graphData;
-    }
-
-    public List<Node> getListOfNodes() {
-        return listOfNodes;
     }
 
     public void initialize()
@@ -28,6 +23,14 @@ public class Graph
         getEdge(graphData);
     }
 
+    public List<Node> getListOfNodes() {
+        return listOfNodes;
+    }
+
+
+    public int getSizeListOfNodes() {
+        return this.listOfNodes.size();
+    }
 
     public List<List<Node>> getGraph(List<String> graphData)
     {
