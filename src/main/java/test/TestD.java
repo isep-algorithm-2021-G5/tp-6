@@ -1,5 +1,6 @@
 package test;
 
+import d.WDgraph;
 import java.io.IOException;
 
 /**
@@ -14,7 +15,9 @@ public class TestD
     public static void main(String[] args) throws IOException
     {
 
-        
+        WDgraph wDgraph = new WDgraph(FILE_PATH);
+        wDgraph.print();
+
 
 
     }

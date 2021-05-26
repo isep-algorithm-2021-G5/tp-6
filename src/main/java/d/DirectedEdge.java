@@ -14,7 +14,7 @@ public class DirectedEdge
     private final int w;
     private final double weight;
 
-    public DirectedEdge(int v, int w, int weight)
+    public DirectedEdge(int v, int w, double weight)
     {
         this.v = v;
         this.w = w;
@@ -39,9 +39,12 @@ public class DirectedEdge
     @Override
     public String toString()
     {
-        return v + " -> " + w + "  (" + String.format("%5.2f", weight) + ")";
+        return v + " -> " + w + " (" + String.format("%5.2f", weight) + ")";
     }
 
+    /**
+     * Two edges are considered the same if their from and to nodes are the same
+     */
     @Override
     public boolean equals(Object o)
     {
@@ -54,12 +57,12 @@ public class DirectedEdge
             return false;
         }
         DirectedEdge that = (DirectedEdge) o;
-        return v == that.v && w == that.w && Double.compare(that.weight, weight) == 0;
+        return v == that.v && w == that.w;
     }
 
     @Override
     public int hashCode()
     {
-        return Objects.hash(v, w, weight);
+        return Objects.hash(v, w);
     }
 }
