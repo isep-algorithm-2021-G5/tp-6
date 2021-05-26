@@ -10,6 +10,7 @@ import java.io.IOException;
  */
 public class TestD
 {
+
     private static final String FILE_PATH = "./src/graph-WDG.txt";
 
     public static void main(String[] args) throws IOException
@@ -17,7 +18,6 @@ public class TestD
 
         WDgraph wDgraph = new WDgraph(FILE_PATH);
         wDgraph.print();
-
 
 
     }

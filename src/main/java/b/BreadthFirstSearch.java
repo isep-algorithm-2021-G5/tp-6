@@ -16,7 +16,9 @@ public class BreadthFirstSearch
      * Mark all the nodes as not visited(by default set as false)
      */
     private boolean[] visited;
-    public ArrayList<Integer> bfs(GraphAdjList graph, int start){
+
+    public ArrayList<Integer> bfs(GraphAdjList graph, int start)
+    {
         visited = new boolean[graph.getTotalVertex()];
 
         // a list to store the route
@@ -28,7 +30,8 @@ public class BreadthFirstSearch
         visited[start] = true;
         queue.add(start);
 
-        while(queue.size()!=0){
+        while (queue.size() != 0)
+        {
             // Dequeue a node from queue
             start = queue.poll();
             // and store into the route list
@@ -50,19 +53,18 @@ public class BreadthFirstSearch
     }
 
     // return 1 means it is connected
-    public boolean isConnected(GraphAdjList graph, int s) {
+    public boolean isConnected(GraphAdjList graph, int s)
+    {
         int count = 0;
         visited = new boolean[graph.getTotalVertex()];
-        for (int i=0; i<graph.getTotalVertex(); i++){
-            if(!visited[i]){
-                bfs(graph,s);
+        for (int i = 0; i < graph.getTotalVertex(); i++)
+        {
+            if (!visited[i])
+            {
+                bfs(graph, s);
                 count++;
             }
         }
-        if(count==1){
-            return true;
-        }else{
-            return false;
-        }
+        return count == 1;
     }
 }

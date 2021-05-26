@@ -2,7 +2,6 @@ package test;
 
 import d.WDgraph;
 import e.DijkstraSP;
-import java.io.IOException;
 
 /**
  * @author : Xuan MIAO

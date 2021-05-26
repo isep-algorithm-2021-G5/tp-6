@@ -4,7 +4,6 @@ import d.DirectedEdge;
 import d.WDgraph;
 import java.util.Stack;
 import java.util.TreeSet;
-import lombok.Getter;
 
 /**
  * @author : Xuan MIAO
@@ -16,9 +15,8 @@ public class DijkstraSP
 
     private final boolean[] marked;
     private final int[] previous;
-    @Getter
     private final double[] distance;
-    private int s;
+    private final int s;
 
     public DijkstraSP(WDgraph G, int s) throws IllegalArgumentException
     {
@@ -135,4 +133,7 @@ public class DijkstraSP
         }
         return index;
     }
+
+    public double[] getDistance()
+    {return this.distance;}
 }

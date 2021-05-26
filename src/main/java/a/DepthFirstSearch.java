@@ -58,14 +58,18 @@ public class DepthFirstSearch
 
     //TODO: need rewrite
     //first rewrite
-    public int cc(Graph graph, int s) {
+    public int cc(Graph graph, int s)
+    {
         int count = 0;
-        for (int i = 0; i < graph.getV(); i++) {
+        for (int i = 0; i < graph.getV(); i++)
+        {
             graph.getNode(i).setIsVisited(false);
         }
-        for (int i = 0; i < graph.getV(); i++) {
-            if (!graph.getNode(i).getIsVisited()) {
-                dfs(graph,s);
+        for (int i = 0; i < graph.getV(); i++)
+        {
+            if (!graph.getNode(i).getIsVisited())
+            {
+                dfs(graph, s);
                 count++;
             }
         }

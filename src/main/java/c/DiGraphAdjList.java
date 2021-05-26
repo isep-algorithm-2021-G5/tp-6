@@ -3,57 +3,71 @@ package c;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-public class DiGraphAdjList {
+public class DiGraphAdjList
+{
 
     /**
      * N vertex
      */
-    private int N;
+    private final int N;
     /**
      * M edge
      */
     private int M;
-    private List<List<Integer>> adj;
+    private final List<List<Integer>> adj;
 
-    public DiGraphAdjList(int N) {
+    public DiGraphAdjList(int N)
+    {
         this.N = N;
         this.M = 0;
         adj = new ArrayList<List<Integer>>();
-        for(int i = 0; i < N; i ++) {
+        for (int i = 0; i < N; i++)
+        {
             adj.add(new ArrayList<Integer>());
         }
     }
 
-    public void addEdge(int u, int v){
+    public void addEdge(int u, int v)
+    {
         adj.get(u).add(v);
         M++;
     }
 
     public int getTotalVertex() {return this.N;}
+
     public int getTotalSize() {return this.M;}
 
-    public DiGraphAdjList readGraphFromText(DiGraphAdjList graph, String file) {
+    public DiGraphAdjList readGraphFromText(DiGraphAdjList graph, String file)
+    {
         BufferedReader br = null;
-        try {
+        try
+        {
             br = new BufferedReader(new FileReader(file));
 
             String line = null;
-            while ((line = br.readLine()) != null) {
+            while ((line = br.readLine()) != null)
+            {
                 String[] neighbor = line.split(" ");
                 int src = Integer.parseInt(neighbor[0]);
                 int dest = Integer.parseInt(neighbor[1]);
                 graph.addEdge(src, dest);
             }
-        } catch (IOException e) {
+        } catch (IOException e)
+        {
             e.printStackTrace();
-        } finally {
+        } finally
+        {
             //close BufferedReader
-            if (br != null) {
-                try {
+            if (br != null)
+            {
+                try
+                {
                     br.close();
-                } catch (IOException e) {
+                } catch (IOException e)
+                {
                     e.printStackTrace();
                 }
             }
@@ -61,16 +75,20 @@ public class DiGraphAdjList {
         return graph;
     }
 
-    public List<List<Integer>> getAdjList() {
+    public List<List<Integer>> getAdjList()
+    {
         return adj;
     }
 
-    public String toString() {
+    public String toString()
+    {
         StringBuilder s = new StringBuilder();
-        s.append(N+" vertices, "+M+" edges."+"\n");
-        for (int i = 0; i < N; i++) {
+        s.append(N + " vertices, " + M + " edges." + "\n");
+        for (int i = 0; i < N; i++)
+        {
             s.append(String.format("%d: ", i));
-            for (int j : adj.get(i)) {
+            for (int j : adj.get(i))
+            {
                 s.append(String.format("%d ", j));
             }
             s.append("\n");

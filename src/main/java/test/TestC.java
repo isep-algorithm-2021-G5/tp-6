@@ -11,7 +11,9 @@ import java.util.List;
  */
 public class TestC
 {
-    public static void main(String[] args) {
+
+    public static void main(String[] args)
+    {
 
 //        Scanner sc = new Scanner(System.in);
 //        System.out.println("Input the number of vertices: 8");
@@ -29,19 +31,22 @@ public class TestC
         /*test BFS for shortest paths in unweighted (di)graph*/
         System.out.println("Test: BFS for shortest paths in unweighted (di)graph");
         BFSShortestPaths bfsPath = new BFSShortestPaths();
-        for(int i=0; i<n; i++){
+        for (int i = 0; i < n; i++)
+        {
             //System.out.println("source:"+i);
-            bfsPath.bfs(graph,i);
+            bfsPath.bfs(graph, i);
             List<Integer> ec = new ArrayList<>();
-            for(int j=0;j<n;j++){
-                System.out.print("Shortest path( "+i+" to "+j+" ): ");
+            for (int j = 0; j < n; j++)
+            {
+                System.out.print("Shortest path( " + i + " to " + j + " ): ");
                 System.out.println(bfsPath.printSP(j));
-                if(bfsPath.hasPathTo(j)){
+                if (bfsPath.hasPathTo(j))
+                {
                     ec.add(bfsPath.distTo(j));
                     //System.out.println("Shortest distance( "+i+" to "+j+" ): "+bfsPath.distTo(j));
                 }
             }
-            System.out.println("node "+i+" eccentricity: "+ Collections.max(ec));
+            System.out.println("node " + i + " eccentricity: " + Collections.max(ec));
         }
 
         //sc.close();

@@ -9,8 +9,8 @@ import java.util.List;
 public class Node
 {
 
-    private int label;
     private final List<Integer> neighbors = new ArrayList<>();
+    private int label;
     private boolean isVisited = false;
 
     public int getLabel()

@@ -31,7 +31,7 @@ public class TestB
         BreadthFirstSearch bfsTest = new BreadthFirstSearch();
         ArrayList<Integer> bfsRoute = bfsTest.bfs(graph, 5);
         System.out.println("BFS route: " + bfsRoute);
-        System.out.println("The graph is connected: "+bfsTest.isConnected(graph,5));
+        System.out.println("The graph is connected: " + bfsTest.isConnected(graph, 5));
 
         //sc.close();
     }

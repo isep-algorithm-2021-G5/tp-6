@@ -3,8 +3,8 @@ package d;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.TreeSet;
 import java.util.TreeMap;
+import java.util.TreeSet;
 
 /**
  * @author : Xuan MIAO
@@ -17,6 +17,12 @@ public class WDgraph
     private final int v;
     private final TreeMap<Integer, TreeSet<DirectedEdge>> adjList = new TreeMap<>();
     private int e = 0;
+
+    public WDgraph(int v)
+    {
+        this.v = v;
+
+    }
 
     public WDgraph(String filePath)
     {
@@ -92,7 +98,7 @@ public class WDgraph
         TreeSet<DirectedEdge> allEdges = new TreeSet<>();
         for (int i = 0; i < v; i++)
         {
-            if(adjList.get(i)!=null)
+            if (adjList.get(i) != null)
             {
                 allEdges.addAll(adjList.get(i));
             }

@@ -1,6 +1,5 @@
 package a;
 
-import a.Node;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,12 +22,14 @@ public class Graph
         getEdge(graphData);
     }
 
-    public List<Node> getListOfNodes() {
+    public List<Node> getListOfNodes()
+    {
         return listOfNodes;
     }
 
 
-    public int getSizeListOfNodes() {
+    public int getSizeListOfNodes()
+    {
         return this.listOfNodes.size();
     }
 
@@ -156,7 +157,8 @@ public class Graph
         return tmp;
     }
 
-    public int getV(){
+    public int getV()
+    {
         return listOfNodes.size();
     }
 }

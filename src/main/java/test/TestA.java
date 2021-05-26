@@ -1,8 +1,8 @@
 package test;
 
 import a.DepthFirstSearch;
-import a.Node;
 import a.Graph;
+import a.Node;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.List;
@@ -40,7 +40,8 @@ public class TestA
             System.out.print(node.getLabel() + " ");
         }
 
-        System.out.println("\n\nThe graph has: " + depthSearchFirst.cc(graph, startingNode) + " components");
+        System.out.println(
+                "\n\nThe graph has: " + depthSearchFirst.cc(graph, startingNode) + " components");
         System.out.println(
                 "The graph is connected: " + depthSearchFirst.isConnected(graph, dfsResult));
 
