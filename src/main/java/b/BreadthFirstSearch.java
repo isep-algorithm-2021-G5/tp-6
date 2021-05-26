@@ -12,7 +12,7 @@ import java.util.Queue;
  * @version : 1.0.0
  * @date : 2021/5/26
  */
-public class BreadthSearchFirst
+public class BreadthFirstSearch
 {
     // Mark all the nodes as not visited(by default set as false)
     private boolean[] visited;
@@ -37,10 +37,10 @@ public class BreadthSearchFirst
             // Get all neighbors of the dequeued node s
             // If a neighbor has not been visited, then mark it
             // visited and enqueue it
-            Iterator<Integer> i = graph.Neighbor(start).listIterator();
-            while(i.hasNext()){
-                int n = i.next();
-                if(!visited[n]){
+            for (int n : graph.Neighbor(start))
+            {
+                if (!visited[n])
+                {
                     visited[n] = true;
                     queue.add(n);
                 }

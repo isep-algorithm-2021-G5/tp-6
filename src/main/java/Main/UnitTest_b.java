@@ -1,10 +1,9 @@
 package Main;
 
-import b.BreadthSearchFirst;
+import b.BreadthFirstSearch;
 import graph.GraphAdjList;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class UnitTest_b {
     public static void main(String[] args) {
@@ -24,7 +23,7 @@ public class UnitTest_b {
 
         /*test BFS*/
         System.out.println("Consider starting from node 5");
-        BreadthSearchFirst bfsTest = new BreadthSearchFirst();
+        BreadthFirstSearch bfsTest = new BreadthFirstSearch();
         ArrayList<Integer> bfsRoute = bfsTest.bfs(graph,5);
         System.out.println("BFS route: "+bfsRoute);
         System.out.println(bfsTest.isConnected(graph,5));
